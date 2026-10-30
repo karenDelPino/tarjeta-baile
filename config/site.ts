@@ -23,7 +23,7 @@ export const siteConfig = {
     date: "Sábado 16 de Enero",
     time: "00:30 hs",
     location: "Quincho Garay",
-    //note: "Venir con ganas de pasarla bien",
+    note: "",
     // TODO: dirección real (texto), para mostrarla si hace falta.
     address: "TODO",
     mapsUrl: "https://maps.app.goo.gl/jgxYkTdFK8KFppvQ8",
