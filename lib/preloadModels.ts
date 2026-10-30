@@ -5,7 +5,7 @@ import { MODEL_URLS } from "./modelUrls";
 const SATELLITE_URLS = [
   MODEL_URLS.oldPc,
   MODEL_URLS.ps2Controller,
-  MODEL_URLS.calculator,
+  MODEL_URLS.escudoBarca,
   MODEL_URLS.worldCupTrophy,
 ];
 

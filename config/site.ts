@@ -6,27 +6,27 @@ function pad2(n: number) {
 }
 
 export const siteConfig = {
-  organizerName: "TODO",
+  organizerName: "LEÓN fEST",
 
   // Años que cumple — se usa en el título de la invitación.
-  ageTurning: 24,
+  ageTurning: 18,
 
   // Fecha de nacimiento del organizador. Es la única fuente de verdad:
   // el código de acceso de la calculadora se deriva de acá (ver accessCode más abajo).
   birthDate: {
-    day: 21,
-    month: 8,
-    year: 2002,
+    day: 16,
+    month: 1,
+    year: 2009,
   },
 
   event: {
-    date: "Sábado 22 de Agosto",
-    time: "13:30 hs",
-    location: "En mi casa",
-    note: "Traer bebidas",
+    date: "Sábado 16 de Enero",
+    time: "00:30 hs",
+    location: "Quincho Garay",
+    //note: "Venir con ganas de pasarla bien",
     // TODO: dirección real (texto), para mostrarla si hace falta.
     address: "TODO",
-    mapsUrl: "https://maps.app.goo.gl/vAe9pYnW4q77CbX59",
+    mapsUrl: "https://maps.app.goo.gl/jgxYkTdFK8KFppvQ8",
   },
 
   audio: {
@@ -37,7 +37,7 @@ export const siteConfig = {
 // Frases que van rotando en la pantalla "CARGANDO..." mientras se
 // precargan los modelos y arranca la canción.
 export const loadingPhrases = [
-  "Traé tu bebida...",
+  "Traé tu cuerpo..",
   "Traé tu buena onda...",
   "Un año más...",
   "Preparando la fiesta...",

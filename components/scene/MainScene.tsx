@@ -14,13 +14,13 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Center, Environment, Float, OrbitControls } from "@react-three/drei";
 import { useControls } from "leva";
 import type { Group } from "three";
-
+import { Personaje } from "@/components/models/Personaje";
 import { Body } from "@/components/models/Body";
-import { Calculator } from "@/components/models/Calculator";
-import { OldPc } from "@/components/models/OldPc";
+
+import { Play5 } from "@/components/models/Play5";
 import { Ps2Controller } from "@/components/models/Ps2Controller";
 import { WorldCupTrophy } from "@/components/models/WorldCupTrophy";
-
+import { EscudoBarca } from "@/components/models/EscudoBarca";
 type Vec3 = [number, number, number];
 
 // Si un modelo falla al cargar (celular flojo, red mala, etc.) que
@@ -91,7 +91,7 @@ function SteadyBody({
       <group position={position} rotation={rotation} scale={scale}>
         <group position={offset}>
           <Center>
-            <Body />
+            <Personaje />
           </Center>
         </group>
       </group>
@@ -162,14 +162,14 @@ function OrbitingModel({
 
 const SATELLITES = [
   {
-    key: "oldPc",
-    name: "PC viejo (satélite)",
-    Component: OldPc,
+    key: "oldPc", // Mantenemos la key para no romper nada extra
+    name: "PlayStation 5 (satélite)",
+    Component: Play5,
     defaultRadius: 4.05,
     defaultHeight: -0.41,
     defaultSpeed: 0.3,
     defaultPhaseDeg: -90,
-    defaultScale: 2.5,
+    defaultScale: 5, // Recuerda ajustar esto en el panel del navegador
     defaultRotation: [0, 5, 0] as Vec3,
   },
   {
@@ -180,19 +180,20 @@ const SATELLITES = [
     defaultHeight: -0.31,
     defaultSpeed: 0.3,
     defaultPhaseDeg: -180,
-    defaultScale: 0.3,
+    defaultScale: 0.2,
     defaultRotation: [1, 0, 0] as Vec3,
   },
+ 
   {
-    key: "calculator",
-    name: "Calculadora (satélite)",
-    Component: Calculator,
+    key: "escudoBarca",
+    name: "Escudo Barça (satélite)",
+    Component: EscudoBarca,
     defaultRadius: 3.8,
     defaultHeight: -0.2,
     defaultSpeed: 0.3,
     defaultPhaseDeg: 0,
-    defaultScale: 0.25,
-    defaultRotation: [20, 0, 0] as Vec3,
+    defaultScale: 12.95, 
+    defaultRotation: [0, 0, 0] as Vec3,
   },
   {
     key: "trophy",
@@ -217,7 +218,7 @@ export default function MainScene() {
   } = useControls("Cara (protagonista)", {
     position: { value: [0.0, 0.0, -3.0] as Vec3, step: 0.1 },
     rotation: { value: [0, 0, 0] as Vec3, step: 0.01 },
-    scale: { value: 10, min: 0.01, max: 10, step: 0.01 },
+    scale: { value: 0.3, min: 0.01, max: 1.5, step: 0.01 },
   });
 
   // La cara aparece primero, sola; los satélites se van sumando de a uno.
@@ -230,7 +231,7 @@ export default function MainScene() {
     <Canvas
       camera={{ position: [0, 0.4, 5], fov: 42 }}
       gl={{ alpha: true }}
-      dpr={[1, 1.5]}
+      dpr={1}
     >
       <Suspense fallback={null}>
         <Environment preset="night" />
