@@ -244,7 +244,7 @@ export function AccessScreen({
       </div>
 
       <p className={styles.hint}>
-        {introPhase === "code" ? "Pista: la fecha de nacimiento (DDMMAA)" : " "}
+        {introPhase === "code" ? "Pista: la fecha de nacimiento del cumpleañero (DDMMAA)" : " "}
       </p>
     </div>
   );
